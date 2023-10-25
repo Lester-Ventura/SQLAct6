@@ -1,5 +1,5 @@
 --2a. Find the total grade points earned by the student with ID '66054 across all
-courses taken by the student.
+-- courses taken by the student.
 
 SELECT SUM(credits * points) AS total_grade_points
 FROM takes
