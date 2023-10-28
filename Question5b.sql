@@ -1,5 +1,5 @@
 -- 5b. Find the number of students with each grade.
-SELECT letter_grade as GRADE, COUNT(letter_grade) as GRADE_COUNT
+SELECT letter_grade, COUNT(letter_grade) as grade_count
 	FROM (
 		SELECT ID,
 		CASE
