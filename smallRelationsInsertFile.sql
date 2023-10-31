@@ -9,6 +9,7 @@ delete from instructor;
 delete from course;
 delete from department;
 delete from classroom;
+delete from marks;
 insert into classroom values ('Packard', '101', '500');
 insert into classroom values ('Painter', '514', '10');
 insert into classroom values ('Taylor', '3128', '70');
@@ -24,12 +25,15 @@ insert into department values ('Physics', 'Watson', '70000');
 insert into course values ('BIO-101', 'Intro. to Biology', 'Biology', '4');
 insert into course values ('BIO-301', 'Genetics', 'Biology', '4');
 insert into course values ('BIO-399', 'Computational Biology', 'Biology', '3');
-insert into course values ('CS-101', 'Intro. to Computer Science', 'Comp. Sci.', '4');
+insert into course values ('CS-101', 'Intro. to Computer Science', 'Comp. Sci.',
+'4');
 insert into course values ('CS-190', 'Game Design', 'Comp. Sci.', '4');
 insert into course values ('CS-315', 'Robotics', 'Comp. Sci.', '3');
 insert into course values ('CS-319', 'Image Processing', 'Comp. Sci.', '3');
-insert into course values ('CS-347', 'Database System Concepts', 'Comp. Sci.', '3');
-insert into course values ('EE-181', 'Intro. to Digital Systems', 'Elec. Eng.', '3');
+insert into course values ('CS-347', 'Database System Concepts', 'Comp. Sci.',
+'3');
+insert into course values ('EE-181', 'Intro. to Digital Systems', 'Elec. Eng.',
+'3');
 insert into course values ('FIN-201', 'Investment Banking', 'Finance', '3');
 insert into course values ('HIS-351', 'World History', 'History', '3');
 insert into course values ('MU-199', 'Music Video Production', 'Music', '3');
@@ -46,20 +50,30 @@ insert into instructor values ('76543', 'Singh', 'Finance', '80000');
 insert into instructor values ('76766', 'Crick', 'Biology', '72000');
 insert into instructor values ('83821', 'Brandt', 'Comp. Sci.', '92000');
 insert into instructor values ('98345', 'Kim', 'Elec. Eng.', '80000');
-insert into section values ('BIO-101', '1', 'Summer', '2017', 'Painter', '514', 'B');
-insert into section values ('BIO-301', '1', 'Summer', '2018', 'Painter', '514', 'A');
+insert into section values ('BIO-101', '1', 'Summer', '2017', 'Painter', '514',
+'B');
+insert into section values ('BIO-301', '1', 'Summer', '2018', 'Painter', '514',
+'A');
 insert into section values ('CS-101', '1', 'Fall', '2017', 'Packard', '101', 'H');
-insert into section values ('CS-101', '1', 'Spring', '2018', 'Packard', '101', 'F');
-insert into section values ('CS-190', '1', 'Spring', '2017', 'Taylor', '3128', 'E');
-insert into section values ('CS-190', '2', 'Spring', '2017', 'Taylor', '3128', 'A');
+insert into section values ('CS-101', '1', 'Spring', '2018', 'Packard', '101',
+'F');
+insert into section values ('CS-190', '1', 'Spring', '2017', 'Taylor', '3128',
+'E');
+insert into section values ('CS-190', '2', 'Spring', '2017', 'Taylor', '3128',
+'A');
 insert into section values ('CS-315', '1', 'Spring', '2018', 'Watson', '120', 'D');
 insert into section values ('CS-319', '1', 'Spring', '2018', 'Watson', '100', 'B');
-insert into section values ('CS-319', '2', 'Spring', '2018', 'Taylor', '3128', 'C');
+insert into section values ('CS-319', '2', 'Spring', '2018', 'Taylor', '3128',
+'C');
 insert into section values ('CS-347', '1', 'Fall', '2017', 'Taylor', '3128', 'A');
-insert into section values ('EE-181', '1', 'Spring', '2017', 'Taylor', '3128', 'C');
-insert into section values ('FIN-201', '1', 'Spring', '2018', 'Packard', '101', 'B');
-insert into section values ('HIS-351', '1', 'Spring', '2018', 'Painter', '514', 'C');
-insert into section values ('MU-199', '1', 'Spring', '2018', 'Packard', '101', 'D');
+insert into section values ('EE-181', '1', 'Spring', '2017', 'Taylor', '3128',
+'C');
+insert into section values ('FIN-201', '1', 'Spring', '2018', 'Packard', '101',
+'B');
+insert into section values ('HIS-351', '1', 'Spring', '2018', 'Painter', '514',
+'C');
+insert into section values ('MU-199', '1', 'Spring', '2018', 'Packard', '101',
+'D');
 insert into section values ('PHY-101', '1', 'Fall', '2017', 'Watson', '100', 'A');
 insert into teaches values ('10101', 'CS-101', '1', 'Fall', '2017');
 insert into teaches values ('10101', 'CS-315', '1', 'Spring', '2018');
@@ -110,7 +124,7 @@ insert into takes values ('76653', 'EE-181', '1', 'Spring', '2017', 'C');
 insert into takes values ('98765', 'CS-101', '1', 'Fall', '2017', 'C-');
 insert into takes values ('98765', 'CS-315', '1', 'Spring', '2018', 'B');
 insert into takes values ('98988', 'BIO-101', '1', 'Summer', '2017', 'A');
-insert into takes values ('98988', 'BIO-301', '1', 'Summer', '2018', null);
+insert into takes values ('98988', 'BIO-301', '1', 'Summer', '2018', 'C');
 insert into advisor values ('00128', '45565');
 insert into advisor values ('12345', '10101');
 insert into advisor values ('23121', '76543');
@@ -147,3 +161,25 @@ insert into prereq values ('CS-315', 'CS-101');
 insert into prereq values ('CS-319', 'CS-101');
 insert into prereq values ('CS-347', 'CS-101');
 insert into prereq values ('EE-181', 'PHY-101');
+insert into marks values ('00128', 'CS-101', '1', 'Fall', '2017', 92);
+insert into marks values ('00128', 'CS-347', '1', 'Fall', '2017', 83);
+insert into marks values ('12345', 'CS-101', '1', 'Fall', '2017', 39);
+insert into marks values ('12345', 'CS-190', '2', 'Spring', '2017', 92);
+insert into marks values ('12345', 'CS-315', '1', 'Spring', '2018', 92);
+insert into marks values ('12345', 'CS-347', '1', 'Fall', '2017', 92);
+insert into marks values ('19991', 'HIS-351', '1', 'Spring', '2018', 30);
+insert into marks values ('23121', 'FIN-201', '1', 'Spring', '2018', 29);
+insert into marks values ('44553', 'PHY-101', '1', 'Fall', '2017', 61);
+insert into marks values ('45678', 'CS-101', '1', 'Fall', '2017', 39);
+insert into marks values ('45678', 'CS-101', '1', 'Spring', '2018', 78);
+insert into marks values ('45678', 'CS-319', '1', 'Spring', '2018', 70);
+insert into marks values ('54321', 'CS-101', '1', 'Fall', '2017', 83);
+insert into marks values ('54321', 'CS-190', '2', 'Spring', '2017', 78);
+insert into marks values ('55739', 'MU-199', '1', 'Spring', '2018', 83);
+insert into marks values ('76543', 'CS-101', '1', 'Fall', '2017', 90);
+insert into marks values ('76543', 'CS-319', '2', 'Spring', '2018', 90);
+insert into marks values ('76653', 'EE-181', '1', 'Spring', '2017', 39);
+insert into marks values ('98765', 'CS-101', '1', 'Fall', '2017', 41);
+insert into marks values ('98765', 'CS-315', '1', 'Spring', '2018', 70);
+insert into marks values ('98988', 'BIO-101', '1', 'Summer', '2017', 90);
+insert into marks values ('98988', 'BIO-301', '1', 'Summer', '2018', 45);
